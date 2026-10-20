@@ -1,0 +1,176 @@
+/* ============================================================
+   KALYANTEJA — Animation Styles
+   ============================================================ */
+
+/* Typing cursor */
+.typing-cursor::after {
+  content: "|";
+  color: var(--primary);
+  animation: blink 0.8s step-end infinite;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Gradient text shimmer */
+.shimmer-text {
+  background: linear-gradient(90deg, #0A5BFF, #00D4FF, #0A5BFF);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+
+/* Pulse glow */
+.pulse-glow {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(10, 91, 255, 0.3); }
+  50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.5); }
+}
+
+/* Mesh gradient animation on dark sections */
+.animated-mesh {
+  position: relative;
+}
+
+.animated-mesh::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(10, 91, 255, 0.2), transparent 40%),
+    radial-gradient(ellipse at 100% 50%, rgba(0, 212, 255, 0.15), transparent 40%);
+  animation: mesh-shift 12s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes mesh-shift {
+  0% { opacity: 0.6; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1.05); }
+}
+
+/* Image zoom on hover containers */
+.img-zoom {
+  overflow: hidden;
+}
+
+.img-zoom img {
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.img-zoom:hover img {
+  transform: scale(1.06);
+}
+
+/* Stagger reveal helpers (used with GSAP) */
+.reveal-item { opacity: 0; }
+
+/* Scale in */
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.scale-in { animation: scale-in 0.6s ease forwards; }
+
+/* Slide indicators */
+.slide-up-soft {
+  animation: slide-up-soft 0.7s ease forwards;
+}
+
+@keyframes slide-up-soft {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Border gradient spin (decorative) */
+.spin-border {
+  position: relative;
+}
+
+.spin-border::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: conic-gradient(from var(--angle, 0deg), #0A5BFF, #00D4FF, #22C55E, #F472B6, #0A5BFF);
+  z-index: -1;
+  animation: spin-angle 4s linear infinite;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.spin-border:hover::before { opacity: 1; }
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes spin-angle {
+  to { --angle: 360deg; }
+}
+
+/* Loading skeleton (optional) */
+.skeleton {
+  background: linear-gradient(90deg, #e2e8f0 25%, #f1f5f9 50%, #e2e8f0 75%);
+  background-size: 200% 100%;
+  animation: skeleton 1.5s ease infinite;
+  border-radius: var(--radius-md);
+}
+
+@keyframes skeleton {
+  to { background-position: -200% 0; }
+}
+
+/* Particle dots (CSS fallback) */
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--primary);
+  opacity: 0.4;
+  animation: particle-float 8s ease-in-out infinite;
+}
+
+@keyframes particle-float {
+  0%, 100% { transform: translateY(0) translateX(0); opacity: 0.3; }
+  50% { transform: translateY(-40px) translateX(15px); opacity: 0.7; }
+}
+
+/* Page transition fade */
+.page-fade-in {
+  animation: page-fade 0.5s ease;
+}
+
+@keyframes page-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Counter flash */
+.counter-flash {
+  animation: counter-flash 0.3s ease;
+}
+
+@keyframes counter-flash {
+  50% { transform: scale(1.05); }
+}
+
+/* AOS overrides for smoother feel */
+[data-aos] {
+  pointer-events: auto !important;
+}

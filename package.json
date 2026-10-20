@@ -1,0 +1,8 @@
+{
+  "name": "kalyanteja",
+  "private": true,
+  "scripts": {
+    "sync-brands": "node scripts/sync-brands.js",
+    "watch-brands": "node scripts/watch-brands.js"
+  }
+}

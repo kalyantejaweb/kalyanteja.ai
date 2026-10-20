@@ -1,0 +1,346 @@
+/* ============================================================
+   KALYANTEJA — Responsive Styles
+   ============================================================ */
+
+/* Large desktops / 4K */
+@media (min-width: 1600px) {
+  :root {
+    --container: 1320px;
+  }
+}
+
+/* Laptop */
+@media (max-width: 1199.98px) {
+  .navbar-nav .nav-link {
+    padding: 0.5rem 0.5rem !important;
+    font-size: 0.8125rem;
+  }
+
+  .nav-cta .btn { padding: 0.7rem 1.15rem; font-size: 0.8rem; }
+
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .bento-services {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "photo photo"
+      "web it"
+      "mobile ai"
+      "saas shop";
+  }
+
+  .bento-blue,
+  .bento-pink {
+    min-height: 280px;
+  }
+  .why-grid { grid-template-columns: repeat(2, 1fr); }
+  .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+  .blog-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-timeline { grid-template-columns: repeat(4, 1fr); }
+  .footer-top { grid-template-columns: 1.3fr repeat(2, 1fr); }
+  .footer-top .footer-col:nth-child(4),
+  .footer-top .footer-col:nth-child(5) {
+    grid-column: span 1;
+  }
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+  :root { --nav-height: 96px; }
+
+  .site-header {
+    padding: 0.85rem 0.75rem 0;
+  }
+
+  .site-header .header-bar {
+    border-radius: 28px;
+    padding: 0.45rem 0.55rem 0.45rem 0.75rem;
+  }
+
+  .navbar-brand img { height: 52px; max-width: 200px; }
+
+  .navbar-collapse {
+    flex-basis: 100%;
+    background: transparent;
+    padding: 0.75rem 0.5rem 0.85rem;
+    margin-top: 0.35rem;
+    border-top: 1px solid rgba(148, 163, 184, 0.15);
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .navbar-nav {
+    align-items: stretch;
+    gap: 0.15rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding: 0.75rem 1rem !important;
+    font-size: 0.9rem;
+  }
+
+  .navbar-nav > .nav-item > .nav-link::after { display: none; }
+
+  .navbar-nav .dropdown-menu {
+    border: none;
+    box-shadow: none;
+    padding: 0.15rem 0 0.35rem 0.85rem;
+    background: transparent;
+    margin-top: 0 !important;
+  }
+
+  .nav-cta {
+    margin: 0.75rem 0 0.25rem;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .nav-cta .btn { width: 100%; }
+
+  #milestones .process-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .page-hero {
+    border-bottom-left-radius: 32px;
+    border-bottom-right-radius: 32px;
+  }
+
+  .hero { min-height: auto; padding-bottom: 3rem; }
+
+  .hero-visual {
+    margin-top: 3rem;
+    min-height: 400px;
+  }
+
+  .hero-dashboard img { height: 300px; }
+
+  .about-split {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-image-wrap img { height: 360px; }
+
+  .stats-bar { grid-template-columns: repeat(2, 1fr); }
+
+  .process-flow-track {
+    justify-content: flex-start;
+    gap: 0.45rem;
+    padding-inline: 0.75rem;
+  }
+
+  .process-card {
+    width: 108px;
+    border-radius: 16px;
+  }
+
+  .process-card h3 {
+    font-size: 0.78rem;
+  }
+
+  .process-badge {
+    width: 26px;
+    height: 26px;
+    font-size: 0.7rem;
+    top: -8px;
+    right: -8px;
+  }
+
+  .process-arrow {
+    font-size: 0.75rem;
+  }
+
+  .contact-grid { grid-template-columns: 1fr; }
+
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .footer-brand { grid-column: 1 / -1; }
+
+  .gallery-masonry { columns: 2; }
+
+  .float-1 { left: 0; }
+  .float-2 { right: 0; }
+
+  .tech-stage { min-height: 300px; }
+  .tech-viewport { max-width: 100%; }
+  .tech-card-glide {
+    flex-basis: 120px;
+    height: 130px;
+    border-radius: 18px;
+  }
+  .tech-card-glide i { font-size: 1.55rem; }
+  .tech-card-glide span { font-size: 0.72rem; }
+}
+
+/* Mobile landscape / small tablet */
+@media (max-width: 767.98px) {
+  .services-grid,
+  .why-grid,
+  .portfolio-grid,
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bento-services {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "photo"
+      "web"
+      "mobile"
+      "ai"
+      "saas"
+      "it"
+      "shop";
+  }
+
+  .bento-card {
+    border-radius: 22px;
+  }
+
+  .bento-list.cols-2 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .bento-photo {
+    min-height: 280px;
+  }
+
+  .bento-media {
+    width: min(100%, 220px);
+  }
+
+  .hero-title { font-size: 2rem; }
+
+  .hero-delivered {
+    margin-top: 2rem;
+  }
+
+  .hero-delivered-title {
+    font-size: 0.92rem;
+    padding-inline: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-logo-marquee {
+    border-radius: 22px;
+    padding: 0.75rem 0;
+  }
+
+  .brand-chip {
+    padding: 0.45rem 0.9rem;
+    min-height: 46px;
+    min-width: 96px;
+  }
+
+  .brand-chip img {
+    height: 24px;
+    max-width: 72px;
+  }
+
+  .brand-chip span {
+    font-size: 0.8rem;
+  }
+
+  .hero-float-card { display: none; }
+
+  .tech-badge { width: 40px; height: 40px; font-size: 1rem; }
+
+  .stats-bar {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.5rem 1rem;
+    gap: 1.25rem;
+  }
+
+  .process-timeline { grid-template-columns: 1fr 1fr; }
+
+  .tech-grid { grid-template-columns: repeat(3, 1fr); }
+
+  .contact-form-wrap,
+  .contact-info-card {
+    padding: 1.5rem;
+  }
+
+  .footer-top { grid-template-columns: 1fr; }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-banner { padding: 2rem 1.25rem; }
+
+  .btn-group-hero { flex-direction: column; align-items: stretch; }
+
+  .btn-group-hero .btn { width: 100%; }
+
+  .whatsapp-float {
+    width: 48px;
+    height: 48px;
+    bottom: 1.25rem;
+    left: 1.25rem;
+    font-size: 1.35rem;
+  }
+
+  .back-to-top {
+    width: 42px;
+    height: 42px;
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .page-hero { padding-bottom: 3rem; }
+}
+
+@media (max-width: 575.98px) {
+  .tech-card-glide {
+    flex-basis: 108px;
+    height: 118px;
+  }
+
+  .gallery-masonry { columns: 1; }
+
+  .tech-grid { grid-template-columns: repeat(2, 1fr); }
+
+  .process-timeline,
+  #milestones .process-timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar-brand img { height: 44px; max-width: 160px; }
+
+  .page-hero {
+    border-bottom-left-radius: 28px;
+    border-bottom-right-radius: 28px;
+  }
+
+  .hero-dashboard img { height: 240px; }
+
+  .about-image-wrap img { height: 280px; }
+
+  .portfolio-filters { justify-content: flex-start; overflow-x: auto; flex-wrap: nowrap; padding-bottom: 0.5rem; }
+
+  .job-card { flex-direction: column; align-items: flex-start; }
+
+  .newsletter-form { flex-direction: column; }
+
+  .section-title { max-width: none; }
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo-track,
+  .clients-track {
+    animation: none !important;
+  }
+
+  .tech-card-glide,
+  .tech-focus-name {
+    transition: none !important;
+  }
+}
