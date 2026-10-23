@@ -24,15 +24,17 @@
   }
 
   /* ---------- Active Nav Link ---------- */
-  const currentPage = (location.pathname.split("/").pop() || "index.html").toLowerCase();
-  const pagesUnderDropdown = ["about.html", "gallery.html", "careers.html", "blog.html"];
+  const pathSegment = location.pathname.split("/").pop() || "";
+  const currentPage = pathSegment.replace(/\.html$/i, "").toLowerCase() || "index";
+  const pagesUnderDropdown = ["about", "gallery", "careers", "blog", "faq"];
 
   document.querySelectorAll(".navbar-nav .nav-link, .navbar-nav .dropdown-item").forEach((link) => {
     link.classList.remove("active");
     link.removeAttribute("aria-current");
-    const href = (link.getAttribute("href") || "").split("#")[0].split("/").pop().toLowerCase();
+    const raw = (link.getAttribute("href") || "").split("#")[0];
+    const href = raw.split("/").pop().replace(/\.html$/i, "").toLowerCase() || (raw === "/" ? "index" : "");
     if (!href || href === "#") return;
-    if (href === currentPage || (currentPage === "" && href === "index.html")) {
+    if (href === currentPage || (currentPage === "index" && (href === "index" || href === ""))) {
       link.classList.add("active");
       link.setAttribute("aria-current", "page");
     }
@@ -43,15 +45,22 @@
     const pagesToggle = document.querySelector("#pagesDropdown");
     if (pagesToggle) pagesToggle.classList.add("active");
   }
-  if (currentPage === "services.html") {
-    /* Products can also highlight when viewing product-related service deep links */
-  }
 
   /* ---------- Smooth Scroll ---------- */
-  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  document.querySelectorAll('a[href*="#"]').forEach((anchor) => {
     anchor.addEventListener("click", (e) => {
-      const id = anchor.getAttribute("href");
-      if (!id || id === "#") return;
+      const raw = anchor.getAttribute("href");
+      if (!raw || raw === "#") return;
+      const hashIndex = raw.indexOf("#");
+      if (hashIndex === -1) return;
+      const pathPart = raw.slice(0, hashIndex);
+      const id = raw.slice(hashIndex);
+      const currentFile = location.pathname.split("/").pop() || "index.html";
+      const isSamePage =
+        !pathPart ||
+        pathPart === currentFile ||
+        (pathPart === "index.html" && (currentFile === "index.html" || currentFile === ""));
+      if (!isSamePage) return;
       const target = document.querySelector(id);
       if (!target) return;
       e.preventDefault();
@@ -524,6 +533,56 @@
   document.querySelectorAll(".current-year").forEach((el) => {
     el.textContent = new Date().getFullYear();
   });
+
+  /* ---------- Homepage: Justdial certificate welcome popup (once per visitor) ---------- */
+  const jdWelcome = document.getElementById("jdWelcomeModal");
+  const JD_WELCOME_KEY = "kalyanteja_jd_welcome_seen";
+
+  if (jdWelcome && document.body.classList.contains("page-home")) {
+    const openJdWelcome = () => {
+      jdWelcome.hidden = false;
+      jdWelcome.setAttribute("aria-hidden", "false");
+      document.body.classList.add("jd-welcome-open");
+      requestAnimationFrame(() => jdWelcome.classList.add("is-open"));
+      const closeBtn = jdWelcome.querySelector(".jd-welcome__close");
+      closeBtn?.focus();
+    };
+
+    const closeJdWelcome = () => {
+      jdWelcome.classList.remove("is-open");
+      jdWelcome.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("jd-welcome-open");
+      try {
+        localStorage.setItem(JD_WELCOME_KEY, "1");
+      } catch (_) {
+        /* ignore */
+      }
+      window.setTimeout(() => {
+        jdWelcome.hidden = true;
+      }, 350);
+    };
+
+    jdWelcome.querySelectorAll("[data-jd-close]").forEach((el) => {
+      el.addEventListener("click", closeJdWelcome);
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && jdWelcome.classList.contains("is-open")) {
+        closeJdWelcome();
+      }
+    });
+
+    let show = true;
+    try {
+      show = !localStorage.getItem(JD_WELCOME_KEY);
+    } catch (_) {
+      show = true;
+    }
+
+    if (show) {
+      window.setTimeout(openJdWelcome, 450);
+    }
+  }
 
   /* ---------- Close mobile nav on link click ---------- */
   document.querySelectorAll(".navbar-nav .nav-link").forEach((link) => {

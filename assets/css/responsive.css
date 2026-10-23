@@ -330,6 +330,19 @@
   .newsletter-form { flex-direction: column; }
 
   .section-title { max-width: none; }
+
+  .jd-welcome {
+    padding: 0.75rem;
+  }
+
+  .jd-welcome__panel {
+    padding: 1rem 1rem 1.15rem;
+    border-radius: 18px;
+  }
+
+  .jd-welcome__eyebrow {
+    font-size: 0.72rem;
+  }
 }
 
 /* Prefers reduced motion */
@@ -343,4 +356,10 @@
   .tech-focus-name {
     transition: none !important;
   }
+
+  .jd-welcome,
+  .jd-welcome__panel {
+    transition: none !important;
+  }
+
 }
