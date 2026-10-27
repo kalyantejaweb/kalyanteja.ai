@@ -13,9 +13,11 @@ const PUBLIC_PAGES = [
   '/contact',
   '/gallery',
   '/careers',
-  '/blog',
   '/faq',
 ];
+
+/** Pages allowed to use noindex (not listed in sitemap). */
+const NOINDEX_OK = new Set(['blog.html']);
 
 const htmlFiles = fs
   .readdirSync(ROOT)
@@ -37,7 +39,7 @@ for (const file of htmlFiles) {
     errors.push(`${file}: canonical must use ${SITE} (got ${canonicalMatch[1]})`);
   }
 
-  if (/content="noindex/i.test(html)) {
+  if (/content="noindex/i.test(html) && !NOINDEX_OK.has(file)) {
     errors.push(`${file}: contains noindex directive`);
   }
 

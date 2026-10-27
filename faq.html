@@ -39,53 +39,84 @@
   <link rel="stylesheet" href="assets/css/animations.css">
   <link rel="stylesheet" href="assets/css/responsive.css">
 
+  <!-- JSON-LD -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "name": "KALYANTEJA FAQ",
-    "description": "Answers before we begin — common questions from teams evaluating KALYANTEJA.",
-    "url": "https://kalyanteja.vercel.app/faq",
-    "mainEntity": [
+    "@graph": [
       {
-        "@type": "Question",
-        "name": "What industries do you specialize in?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "We deliver for government, enterprises, startups, healthcare, finance, education, manufacturing, and retail — adapting architecture and compliance to each domain."
-        }
+        "@type": "FAQPage",
+        "@id": "https://kalyanteja.vercel.app/faq#webpage",
+        "url": "https://kalyanteja.vercel.app/faq",
+        "name": "FAQ | KalyanTeja Inspired Digital Solutions",
+        "description": "Common questions about websites, apps, SEO, and digital marketing with KalyanTeja Inspired Digital Solutions.",
+        "isPartOf": {
+          "@id": "https://kalyanteja.vercel.app/#website"
+        },
+        "about": {
+          "@id": "https://kalyanteja.vercel.app/#organization"
+        },
+        "publisher": {
+          "@id": "https://kalyanteja.vercel.app/#organization"
+        },
+        "inLanguage": "en-IN",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What industries do you specialize in?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We work with businesses across 12+ industries including retail, healthcare, education, finance, real estate, logistics, e-commerce, and startups — with websites, apps, SEO, and digital marketing tailored to each sector."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do engagement models work?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Choose fixed-scope projects or ongoing retainers for SEO and social media. We define deliverables, timelines, and communication before work begins."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do you provide post-launch support?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. We offer maintenance, content updates, SEO monitoring, and priority support packages after launch."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can you modernize legacy systems?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We can refresh outdated websites, improve performance and mobile UX, and integrate modern tools such as analytics, forms, and payment gateways."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How quickly can a project start?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Most projects begin within 1–2 weeks after we agree on scope and receive the initial brief and assets."
+            }
+          }
+        ]
       },
       {
-        "@type": "Question",
-        "name": "How do engagement models work?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Choose fixed-scope projects, dedicated teams, or hybrid retainers. We define milestones, communication cadence, and KPIs before kickoff."
-        }
+        "@type": "WebSite",
+        "@id": "https://kalyanteja.vercel.app/#website",
+        "url": "https://kalyanteja.vercel.app/",
+        "name": "KalyanTeja Inspired Digital Solutions"
       },
       {
-        "@type": "Question",
-        "name": "Do you provide post-launch support?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes. Maintenance packages include monitoring, security patches, feature enhancements, and priority support with clear response SLAs."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can you modernize legacy systems?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely. We assess existing platforms, plan phased migration, and modernize with APIs, cloud, and microservices without disrupting operations."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "How quickly can a project start?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Most discovery workshops begin within 1–2 weeks of agreement. Full team onboarding typically follows after architecture and backlog definition."
-        }
+        "@type": "Organization",
+        "@id": "https://kalyanteja.vercel.app/#organization",
+        "name": "KalyanTeja Inspired Digital Solutions",
+        "url": "https://kalyanteja.vercel.app/",
+        "logo": "https://kalyanteja.vercel.app/assets/images/logo-f.png",
+        "telephone": "+91-83281-06802",
+        "email": "kalyanteja.web@gmail.com"
       }
     ]
   }
@@ -96,8 +127,8 @@
   <header class="site-header">
     <nav class="navbar navbar-expand-lg">
       <div class="container-xl header-bar">
-        <a class="navbar-brand" href="index.html" aria-label="KALYANTEJA Home">
-          <img src="assets/images/logo-f.png" alt="KALYANTEJA — Inspired Digital Solutions" width="260" height="72">
+        <a class="navbar-brand" href="index.html" aria-label="KalyanTeja Inspired Digital Solutions Home">
+          <img src="assets/images/logo-f.png" alt="KalyanTeja Inspired Digital Solutions" width="260" height="72">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -222,7 +253,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a href="index.html" class="footer-logo">
-            <img src="assets/images/logo-f.png" alt="KALYANTEJA" width="220" height="60">
+            <img src="assets/images/logo-f.png" alt="KalyanTeja Inspired Digital Solutions" width="220" height="60">
           </a>
           <p>Inspired Web Solutions — delivering scalable software for enterprises, government, and ambitious startups worldwide.</p>
           <form class="newsletter-form" id="newsletterForm">
@@ -273,9 +304,9 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span class="current-year">2026</span> KALYANTEJA Inspired Digital Solutions. All rights reserved.</p>
+        <p>&copy; <span class="current-year">2026</span> KalyanTeja Inspired Digital Solutions. All rights reserved.</p>
         <div class="footer-social">
-          <a href="https://www.linkedin.com/in/kalyanteja" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer me"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.linkedin.com/in/kalyanbabuykb/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer me"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer me"><i class="fab fa-x-twitter"></i></a>
           <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer me"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer me"><i class="fab fa-instagram"></i></a>

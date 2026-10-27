@@ -48,32 +48,104 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "KalyanTeja Inspired Digital Solutions",
-    "url": "https://kalyanteja.vercel.app/services",
-    "description": "Website design and development, UI/UX, mobile apps, SEO, digital marketing, and social media management in Hyderabad, Telangana.",
-    "areaServed": {
-      "@type": "City",
-      "name": "Hyderabad",
-      "containedInPlace": { "@type": "State", "name": "Telangana" }
-    },
-    "provider": {
-      "@type": "Organization",
-      "name": "KalyanTeja Inspired Digital Solutions",
-      "url": "https://kalyanteja.vercel.app/"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "Digital services",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design and Development" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "UI/UX Design" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Mobile App Development" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO Services" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Digital Marketing" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Social Media Management" } }
-      ]
-    }
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://kalyanteja.vercel.app/services#webpage",
+        "url": "https://kalyanteja.vercel.app/services",
+        "name": "Services | KalyanTeja Inspired Digital Solutions",
+        "description": "Website design, UI/UX, mobile apps, SEO, digital marketing, and social media management in Hyderabad, Telangana.",
+        "isPartOf": {
+          "@id": "https://kalyanteja.vercel.app/#website"
+        },
+        "about": {
+          "@id": "https://kalyanteja.vercel.app/#organization"
+        },
+        "publisher": {
+          "@id": "https://kalyanteja.vercel.app/#organization"
+        },
+        "inLanguage": "en-IN",
+        "mainEntity": {
+          "@type": "ProfessionalService",
+          "name": "KalyanTeja Inspired Digital Solutions",
+          "url": "https://kalyanteja.vercel.app/services",
+          "provider": {
+            "@id": "https://kalyanteja.vercel.app/#organization"
+          },
+          "areaServed": {
+            "@type": "City",
+            "name": "Hyderabad",
+            "containedInPlace": {
+              "@type": "State",
+              "name": "Telangana"
+            }
+          },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Digital services",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Website Design and Development"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "UI/UX Design"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Mobile App Development"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "SEO Services"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Digital Marketing"
+                }
+              },
+              {
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": "Social Media Management"
+                }
+              }
+            ]
+          }
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://kalyanteja.vercel.app/#website",
+        "url": "https://kalyanteja.vercel.app/",
+        "name": "KalyanTeja Inspired Digital Solutions"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://kalyanteja.vercel.app/#organization",
+        "name": "KalyanTeja Inspired Digital Solutions",
+        "url": "https://kalyanteja.vercel.app/",
+        "logo": "https://kalyanteja.vercel.app/assets/images/logo-f.png",
+        "telephone": "+91-83281-06802",
+        "email": "kalyanteja.web@gmail.com"
+      }
+    ]
   }
   </script>
 </head>
@@ -83,8 +155,8 @@
   <header class="site-header">
     <nav class="navbar navbar-expand-lg">
       <div class="container-xl header-bar">
-        <a class="navbar-brand" href="index.html" aria-label="KALYANTEJA Home">
-          <img src="assets/images/logo-f.png" alt="KALYANTEJA — Inspired Digital Solutions" width="260" height="72">
+        <a class="navbar-brand" href="index.html" aria-label="KalyanTeja Inspired Digital Solutions Home">
+          <img src="assets/images/logo-f.png" alt="KalyanTeja Inspired Digital Solutions" width="260" height="72">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -127,7 +199,7 @@
     <!-- ========== PAGE HERO ========== -->
     <section class="page-hero" aria-labelledby="pageTitle">
       <div class="container-xl">
-        <span class="eyebrow" style="color:var(--accent);">KALYANTEJA Inspired Digital Solutions</span>
+        <span class="eyebrow" style="color:var(--accent);">KalyanTeja Inspired Digital Solutions</span>
         <h1 id="pageTitle">Our Services</h1>
         <p>Website design, UI/UX, mobile apps, SEO, digital marketing, and social media — delivered from Hyderabad, Telangana, with clear scope and timelines. See our <a href="portfolio.html">portfolio</a> or <a href="contact.html">request a quote</a>.</p>
         <nav class="breadcrumb-nav" aria-label="Breadcrumb">
@@ -523,7 +595,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a class="navbar-brand" href="index.html">
-            <img src="assets/images/logo-f.png" alt="KALYANTEJA" width="220" height="60">
+            <img src="assets/images/logo-f.png" alt="KalyanTeja Inspired Digital Solutions" width="220" height="60">
           </a>
           <p>Inspired Web Solutions — delivering scalable software for enterprises, government, and ambitious startups worldwide.</p>
           <form class="newsletter-form" id="newsletterForm">
@@ -574,9 +646,9 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span class="current-year">2026</span> KALYANTEJA Inspired Digital Solutions. All rights reserved.</p>
+        <p>&copy; <span class="current-year">2026</span> KalyanTeja Inspired Digital Solutions. All rights reserved.</p>
         <div class="footer-social">
-          <a href="https://www.linkedin.com/in/kalyanteja" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer me"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.linkedin.com/in/kalyanbabuykb/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer me"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer me"><i class="fab fa-x-twitter"></i></a>
           <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer me"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer me"><i class="fab fa-instagram"></i></a>

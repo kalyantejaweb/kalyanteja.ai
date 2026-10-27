@@ -48,20 +48,40 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "KALYANTEJA Portfolio",
-    "description": "Enterprise software development portfolio featuring case studies across multiple industries.",
-    "url": "https://kalyanteja.vercel.app/portfolio",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "KALYANTEJA",
-      "url": "https://kalyanteja.vercel.app"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "KALYANTEJA",
-      "logo": "https://kalyanteja.vercel.app/assets/images/logo-f.png"
-    }
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "https://kalyanteja.vercel.app/portfolio#webpage",
+        "url": "https://kalyanteja.vercel.app/portfolio",
+        "name": "Portfolio | KalyanTeja Inspired Digital Solutions",
+        "description": "Portfolio of 90+ website, app, and digital marketing projects across 12+ industries.",
+        "isPartOf": {
+          "@id": "https://kalyanteja.vercel.app/#website"
+        },
+        "about": {
+          "@id": "https://kalyanteja.vercel.app/#organization"
+        },
+        "publisher": {
+          "@id": "https://kalyanteja.vercel.app/#organization"
+        },
+        "inLanguage": "en-IN"
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://kalyanteja.vercel.app/#website",
+        "url": "https://kalyanteja.vercel.app/",
+        "name": "KalyanTeja Inspired Digital Solutions"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://kalyanteja.vercel.app/#organization",
+        "name": "KalyanTeja Inspired Digital Solutions",
+        "url": "https://kalyanteja.vercel.app/",
+        "logo": "https://kalyanteja.vercel.app/assets/images/logo-f.png",
+        "telephone": "+91-83281-06802",
+        "email": "kalyanteja.web@gmail.com"
+      }
+    ]
   }
   </script>
 </head>
@@ -71,8 +91,8 @@
   <header class="site-header">
     <nav class="navbar navbar-expand-lg">
       <div class="container-xl header-bar">
-        <a class="navbar-brand" href="index.html" aria-label="KALYANTEJA Home">
-          <img src="assets/images/logo-f.png" alt="KALYANTEJA — Inspired Digital Solutions" width="260" height="72">
+        <a class="navbar-brand" href="index.html" aria-label="KalyanTeja Inspired Digital Solutions Home">
+          <img src="assets/images/logo-f.png" alt="KalyanTeja Inspired Digital Solutions" width="260" height="72">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -132,7 +152,7 @@
         <div class="section-header centered" data-aos="fade-up">
           <span class="eyebrow">Selected Projects</span>
           <h2 class="section-title">Delivering measurable outcomes at scale</h2>
-          <p class="section-lead">Filter by capability to explore how we architect, build, and sustain mission-critical platforms for enterprise clients.</p>
+          <p class="section-lead">Filter by capability to explore representative work from our 90+ deliveries across 12+ industries.</p>
         </div>
 
         <div class="portfolio-filters" data-aos="fade-up">
@@ -150,13 +170,13 @@
               <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=900&q=80" alt="Finance analytics platform dashboard with charts and KPIs" loading="lazy" width="400" height="260">
               <div class="portfolio-overlay">
                 <a href="contact.html" class="btn btn-sm btn-primary">Case Study</a>
-                <a href="#" class="btn btn-sm btn-ghost">Visit</a>
+                <a href="contact.html" class="btn btn-sm btn-ghost">Get Quote</a>
               </div>
             </div>
             <div class="portfolio-body">
               <div class="portfolio-tags"><span class="tag">.NET</span><span class="tag">Azure</span><span class="tag">React</span></div>
-              <h3>Nexus Finance Suite</h3>
-              <p>Unified analytics and regulatory reporting platform for a multinational banking group serving 12 countries.</p>
+              <h3>Finance Analytics Dashboard</h3>
+              <p>Custom KPI dashboards and reporting views for a regional finance client.</p>
             </div>
           </article>
 
@@ -165,13 +185,13 @@
               <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&q=80" alt="Healthcare mobile application interface on smartphone" loading="lazy" width="400" height="260">
               <div class="portfolio-overlay">
                 <a href="contact.html" class="btn btn-sm btn-primary">Case Study</a>
-                <a href="#" class="btn btn-sm btn-ghost">Visit</a>
+                <a href="contact.html" class="btn btn-sm btn-ghost">Get Quote</a>
               </div>
             </div>
             <div class="portfolio-body">
               <div class="portfolio-tags"><span class="tag">Flutter</span><span class="tag">Firebase</span><span class="tag">HIPAA</span></div>
-              <h3>CareConnect Health</h3>
-              <p>Patient engagement app connecting clinics, diagnostic labs, and telemedicine across a regional hospital network.</p>
+              <h3>Healthcare Patient App</h3>
+              <p>Appointments, notifications, and basic records access for a local clinic group.</p>
             </div>
           </article>
 
@@ -180,13 +200,13 @@
               <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80" alt="Manufacturing plant with industrial automation and monitoring systems" loading="lazy" width="400" height="260">
               <div class="portfolio-overlay">
                 <a href="contact.html" class="btn btn-sm btn-primary">Case Study</a>
-                <a href="#" class="btn btn-sm btn-ghost">Visit</a>
+                <a href="contact.html" class="btn btn-sm btn-ghost">Get Quote</a>
               </div>
             </div>
             <div class="portfolio-body">
               <div class="portfolio-tags"><span class="tag">Python</span><span class="tag">AWS</span><span class="tag">ML</span></div>
-              <h3>Orbit Insight Engine</h3>
-              <p>Predictive operations platform reducing unplanned downtime by 34% across large-scale manufacturing plants.</p>
+              <h3>Operations Insights Platform</h3>
+              <p>Production monitoring dashboards and alert workflows for a manufacturing SME.</p>
             </div>
           </article>
 
@@ -195,13 +215,13 @@
               <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=900&q=80" alt="Government digital services portal on desktop screen" loading="lazy" width="400" height="260">
               <div class="portfolio-overlay">
                 <a href="contact.html" class="btn btn-sm btn-primary">Case Study</a>
-                <a href="#" class="btn btn-sm btn-ghost">Visit</a>
+                <a href="contact.html" class="btn btn-sm btn-ghost">Get Quote</a>
               </div>
             </div>
             <div class="portfolio-body">
               <div class="portfolio-tags"><span class="tag">Java</span><span class="tag">Angular</span><span class="tag">SSO</span></div>
-              <h3>CivicServe Portal</h3>
-              <p>Citizen services platform streamlining permits, tax filings, and public requests for a state government agency.</p>
+              <h3>Services Web Portal</h3>
+              <p>Online applications, document uploads, and status tracking for a services organization.</p>
             </div>
           </article>
 
@@ -210,13 +230,13 @@
               <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80" alt="E-commerce retail platform checkout interface" loading="lazy" width="400" height="260">
               <div class="portfolio-overlay">
                 <a href="contact.html" class="btn btn-sm btn-primary">Case Study</a>
-                <a href="#" class="btn btn-sm btn-ghost">Visit</a>
+                <a href="contact.html" class="btn btn-sm btn-ghost">Get Quote</a>
               </div>
             </div>
             <div class="portfolio-body">
               <div class="portfolio-tags"><span class="tag">Next.js</span><span class="tag">Node.js</span><span class="tag">Stripe</span></div>
-              <h3>RetailGrid Commerce</h3>
-              <p>Omnichannel storefront with real-time inventory sync across 180 retail locations and marketplace channels.</p>
+              <h3>E-commerce Storefront</h3>
+              <p>Product catalog, checkout, and inventory sync for a multi-location retail brand.</p>
             </div>
           </article>
 
@@ -225,13 +245,13 @@
               <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=80" alt="Education learning platform on tablet and laptop" loading="lazy" width="400" height="260">
               <div class="portfolio-overlay">
                 <a href="contact.html" class="btn btn-sm btn-primary">Case Study</a>
-                <a href="#" class="btn btn-sm btn-ghost">Visit</a>
+                <a href="contact.html" class="btn btn-sm btn-ghost">Get Quote</a>
               </div>
             </div>
             <div class="portfolio-body">
               <div class="portfolio-tags"><span class="tag">React Native</span><span class="tag">GCP</span><span class="tag">LMS</span></div>
-              <h3>EduSpark LMS</h3>
-              <p>Learning platform serving 40,000 students with live classes, assessments, and institutional analytics.</p>
+              <h3>Education Learning Site</h3>
+              <p>Course listings, enrollments, and schedules for a training institute.</p>
             </div>
           </article>
 
@@ -240,13 +260,13 @@
               <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=900&q=80" alt="Core banking system dashboard with financial data visualization" loading="lazy" width="400" height="260">
               <div class="portfolio-overlay">
                 <a href="contact.html" class="btn btn-sm btn-primary">Case Study</a>
-                <a href="#" class="btn btn-sm btn-ghost">Visit</a>
+                <a href="contact.html" class="btn btn-sm btn-ghost">Get Quote</a>
               </div>
             </div>
             <div class="portfolio-body">
               <div class="portfolio-tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Oracle</span></div>
-              <h3>TreasuryMax Core Banking</h3>
-              <p>Mission-critical core banking module handling treasury operations, liquidity management, and audit trails.</p>
+              <h3>Business Accounts Portal</h3>
+              <p>Secure client login area for statements, requests, and account summaries.</p>
             </div>
           </article>
 
@@ -255,13 +275,13 @@
               <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=900&q=80" alt="Electronic health records system on clinical workstation" loading="lazy" width="400" height="260">
               <div class="portfolio-overlay">
                 <a href="contact.html" class="btn btn-sm btn-primary">Case Study</a>
-                <a href="#" class="btn btn-sm btn-ghost">Visit</a>
+                <a href="contact.html" class="btn btn-sm btn-ghost">Get Quote</a>
               </div>
             </div>
             <div class="portfolio-body">
               <div class="portfolio-tags"><span class="tag">.NET</span><span class="tag">PostgreSQL</span><span class="tag">Angular</span></div>
-              <h3>MedVault EHR Platform</h3>
-              <p>Secure electronic health records system with role-based access, HL7 integration, and clinical workflow automation.</p>
+              <h3>Clinic Admin Dashboard</h3>
+              <p>Staff dashboards for appointments, billing summaries, and patient communication.</p>
             </div>
           </article>
 
@@ -270,13 +290,13 @@
               <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=80" alt="Government GIS mapping portal with geographic data layers" loading="lazy" width="400" height="260">
               <div class="portfolio-overlay">
                 <a href="contact.html" class="btn btn-sm btn-primary">Case Study</a>
-                <a href="#" class="btn btn-sm btn-ghost">Visit</a>
+                <a href="contact.html" class="btn btn-sm btn-ghost">Get Quote</a>
               </div>
             </div>
             <div class="portfolio-body">
               <div class="portfolio-tags"><span class="tag">Python</span><span class="tag">Django</span><span class="tag">AWS</span></div>
-              <h3>PublicWorks GIS Portal</h3>
-              <p>Geospatial asset management portal for municipal infrastructure planning, inspections, and citizen reporting.</p>
+              <h3>Field Operations Map View</h3>
+              <p>Map-based asset tracking and work-order views for a logistics client.</p>
             </div>
           </article>
 
@@ -285,13 +305,13 @@
               <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=900&q=80" alt="Retail point-of-sale network across modern store environment" loading="lazy" width="400" height="260">
               <div class="portfolio-overlay">
                 <a href="contact.html" class="btn btn-sm btn-primary">Case Study</a>
-                <a href="#" class="btn btn-sm btn-ghost">Visit</a>
+                <a href="contact.html" class="btn btn-sm btn-ghost">Get Quote</a>
               </div>
             </div>
             <div class="portfolio-body">
               <div class="portfolio-tags"><span class="tag">Vue.js</span><span class="tag">Node.js</span><span class="tag">MongoDB</span></div>
-              <h3>OmniRetail POS Network</h3>
-              <p>Unified point-of-sale ecosystem linking in-store terminals, warehouse logistics, and loyalty programs in real time.</p>
+              <h3>Retail POS Integration</h3>
+              <p>POS data sync with online inventory and simple loyalty tracking for stores.</p>
             </div>
           </article>
 
@@ -300,13 +320,13 @@
               <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=900&q=80" alt="University campus digital student services hub" loading="lazy" width="400" height="260">
               <div class="portfolio-overlay">
                 <a href="contact.html" class="btn btn-sm btn-primary">Case Study</a>
-                <a href="#" class="btn btn-sm btn-ghost">Visit</a>
+                <a href="contact.html" class="btn btn-sm btn-ghost">Get Quote</a>
               </div>
             </div>
             <div class="portfolio-body">
               <div class="portfolio-tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Azure</span></div>
-              <h3>CampusOne Student Hub</h3>
-              <p>All-in-one student portal for admissions, course registration, fee payments, and campus service requests.</p>
+              <h3>Student Services Hub</h3>
+              <p>Admissions forms, fee payment links, and service requests for an education client.</p>
             </div>
           </article>
 
@@ -315,13 +335,13 @@
               <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=900&q=80" alt="Manufacturing execution system dashboard on factory floor" loading="lazy" width="400" height="260">
               <div class="portfolio-overlay">
                 <a href="contact.html" class="btn btn-sm btn-primary">Case Study</a>
-                <a href="#" class="btn btn-sm btn-ghost">Visit</a>
+                <a href="contact.html" class="btn btn-sm btn-ghost">Get Quote</a>
               </div>
             </div>
             <div class="portfolio-body">
               <div class="portfolio-tags"><span class="tag">TensorFlow</span><span class="tag">Kubernetes</span><span class="tag">Python</span></div>
-              <h3>ProLine MES Dashboard</h3>
-              <p>Manufacturing execution system with AI-driven quality inspection and production line optimization for automotive suppliers.</p>
+              <h3>Production Floor Dashboard</h3>
+              <p>Shift reports, quality checklists, and line status views for a factory client.</p>
             </div>
           </article>
         </div>
@@ -333,20 +353,20 @@
       <div class="container-xl">
         <div class="stats-bar" data-aos="fade-up">
           <div class="stat-item">
-            <div class="stat-number"><span data-count="500" data-suffix="+">0</span></div>
+            <div class="stat-number"><span data-count="14" data-suffix="+">14+</span></div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number"><span data-count="90" data-suffix="+">90+</span></div>
             <div class="stat-label">Projects Delivered</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number"><span data-count="6" data-suffix="">0</span></div>
+            <div class="stat-number"><span data-count="12" data-suffix="+">12+</span></div>
             <div class="stat-label">Industries Served</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number"><span data-count="98" data-suffix="%">0</span></div>
-            <div class="stat-label">On-Time Delivery</div>
-          </div>
-          <div class="stat-item">
-            <div class="stat-number"><span data-count="40" data-suffix="+">0</span></div>
-            <div class="stat-label">Enterprise Clients</div>
+            <div class="stat-number"><span data-count="99" data-suffix="%">99%</span></div>
+            <div class="stat-label">Client Satisfaction</div>
           </div>
         </div>
       </div>
@@ -375,7 +395,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a class="navbar-brand" href="index.html">
-            <img src="assets/images/logo-f.png" alt="KALYANTEJA" width="220" height="60">
+            <img src="assets/images/logo-f.png" alt="KalyanTeja Inspired Digital Solutions" width="220" height="60">
           </a>
           <p>Inspired Web Solutions — delivering scalable software for enterprises, government, and ambitious startups worldwide.</p>
           <form class="newsletter-form" id="newsletterForm">
@@ -426,9 +446,9 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span class="current-year">2026</span> KALYANTEJA Inspired Digital Solutions. All rights reserved.</p>
+        <p>&copy; <span class="current-year">2026</span> KalyanTeja Inspired Digital Solutions. All rights reserved.</p>
         <div class="footer-social">
-          <a href="https://www.linkedin.com/in/kalyanteja" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer me"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.linkedin.com/in/kalyanbabuykb/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer me"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer me"><i class="fab fa-x-twitter"></i></a>
           <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer me"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer me"><i class="fab fa-instagram"></i></a>

@@ -48,22 +48,43 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ContactPage",
-    "name": "Contact KALYANTEJA",
-    "description": "Contact KALYANTEJA for enterprise software development inquiries.",
-    "url": "https://kalyanteja.vercel.app/contact",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "KalyanTeja Inspired Digital Solutions",
-      "telephone": "+91-83281-06802",
-      "email": "kalyanteja.web@gmail.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Hyderabad",
-        "addressRegion": "Telangana",
-        "addressCountry": "IN"
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": "https://kalyanteja.vercel.app/contact#webpage",
+        "url": "https://kalyanteja.vercel.app/contact",
+        "name": "Contact KalyanTeja Inspired Digital Solutions",
+        "description": "Contact KalyanTeja Inspired Digital Solutions in Hyderabad for websites, apps, SEO, and digital marketing. Phone +91 83281 06802.",
+        "isPartOf": {
+          "@id": "https://kalyanteja.vercel.app/#website"
+        },
+        "about": {
+          "@id": "https://kalyanteja.vercel.app/#organization"
+        },
+        "publisher": {
+          "@id": "https://kalyanteja.vercel.app/#organization"
+        },
+        "inLanguage": "en-IN",
+        "mainEntity": {
+          "@id": "https://kalyanteja.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://kalyanteja.vercel.app/#website",
+        "url": "https://kalyanteja.vercel.app/",
+        "name": "KalyanTeja Inspired Digital Solutions"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://kalyanteja.vercel.app/#organization",
+        "name": "KalyanTeja Inspired Digital Solutions",
+        "url": "https://kalyanteja.vercel.app/",
+        "logo": "https://kalyanteja.vercel.app/assets/images/logo-f.png",
+        "telephone": "+91-83281-06802",
+        "email": "kalyanteja.web@gmail.com"
       }
-    }
+    ]
   }
   </script>
 </head>
@@ -73,8 +94,8 @@
   <header class="site-header">
     <nav class="navbar navbar-expand-lg">
       <div class="container-xl header-bar">
-        <a class="navbar-brand" href="index.html" aria-label="KALYANTEJA Home">
-          <img src="assets/images/logo-f.png" alt="KALYANTEJA — Inspired Digital Solutions" width="260" height="72">
+        <a class="navbar-brand" href="index.html" aria-label="KalyanTeja Inspired Digital Solutions Home">
+          <img src="assets/images/logo-f.png" alt="KalyanTeja Inspired Digital Solutions" width="260" height="72">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -176,41 +197,46 @@
               </div>
             </div>
             <div class="contact-social">
-              <a href="https://www.linkedin.com/in/kalyanteja" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer me"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://www.linkedin.com/in/kalyanbabuykb/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer me"><i class="fab fa-linkedin-in"></i></a>
               <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer me"><i class="fab fa-x-twitter"></i></a>
               <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer me"><i class="fab fa-facebook-f"></i></a>
               <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer me"><i class="fab fa-instagram"></i></a>
               <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
             </div>
             <div class="map-wrap">
-              <iframe title="KALYANTEJA office location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Hyderabad%20India&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+              <iframe title="KalyanTeja Inspired Digital Solutions office location map" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Hyderabad%20India&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
             </div>
           </div>
 
           <div class="contact-form-wrap">
+            <div id="contactFormStatus" class="alert d-none mb-3" role="alert" aria-live="polite"></div>
             <form id="contactForm" novalidate>
+              <div class="visually-hidden" aria-hidden="true">
+                <label for="website">Leave blank</label>
+                <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+              </div>
               <div class="row g-3">
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="fullName" placeholder="Full Name" required>
+                    <input type="text" class="form-control" id="fullName" name="name" placeholder="Full Name" required>
                     <label for="fullName">Full Name</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="email" class="form-control" id="email" placeholder="Email" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
                     <label for="email">Work Email</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="tel" class="form-control" id="phone" placeholder="Phone" required>
+                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone" required>
                     <label for="phone">Phone</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <select class="form-select" id="service" required>
+                    <select class="form-select" id="service" name="service" required>
                       <option value="" selected disabled>Select service</option>
                       <option>Custom Software</option>
                       <option>Web Development</option>
@@ -225,13 +251,13 @@
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="company" placeholder="Company">
+                    <input type="text" class="form-control" id="company" name="company" placeholder="Company">
                     <label for="company">Company / Organization</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" id="message" placeholder="Message" style="height:140px" required></textarea>
+                    <textarea class="form-control" id="message" name="message" placeholder="Message" style="height:140px" required></textarea>
                     <label for="message">Project Details</label>
                   </div>
                 </div>
@@ -268,7 +294,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a class="navbar-brand" href="index.html">
-            <img src="assets/images/logo-f.png" alt="KALYANTEJA" width="220" height="60">
+            <img src="assets/images/logo-f.png" alt="KalyanTeja Inspired Digital Solutions" width="220" height="60">
           </a>
           <p>Inspired Web Solutions — delivering scalable software for enterprises, government, and ambitious startups worldwide.</p>
           <form class="newsletter-form" id="newsletterForm">
@@ -319,9 +345,9 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span class="current-year">2026</span> KALYANTEJA Inspired Digital Solutions. All rights reserved.</p>
+        <p>&copy; <span class="current-year">2026</span> KalyanTeja Inspired Digital Solutions. All rights reserved.</p>
         <div class="footer-social">
-          <a href="https://www.linkedin.com/in/kalyanteja" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer me"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.linkedin.com/in/kalyanbabuykb/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer me"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer me"><i class="fab fa-x-twitter"></i></a>
           <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer me"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer me"><i class="fab fa-instagram"></i></a>
@@ -339,6 +365,7 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script src="assets/js/contact-config.js"></script>
   <script src="assets/js/main.js"></script>
   <script src="assets/js/animations.js"></script>
 </body>

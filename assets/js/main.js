@@ -157,11 +157,38 @@
     });
   });
 
-  /* ---------- Contact Form Validation ---------- */
+  /* ---------- Contact Form (FormSubmit.co delivery) ---------- */
   const contactForm = document.getElementById("contactForm");
   if (contactForm) {
-    contactForm.addEventListener("submit", (e) => {
+    const statusEl = document.getElementById("contactFormStatus");
+    const inbox = window.KT_CONTACT?.formsubmitEmail;
+
+    const setFormStatus = (type, message) => {
+      if (!statusEl) return;
+      statusEl.classList.remove("d-none", "alert-success", "alert-danger", "alert-warning");
+      statusEl.classList.add(type === "success" ? "alert-success" : type === "warn" ? "alert-warning" : "alert-danger");
+      statusEl.textContent = message;
+    };
+
+    const clearFormStatus = () => {
+      if (!statusEl) return;
+      statusEl.classList.add("d-none");
+      statusEl.textContent = "";
+      statusEl.classList.remove("alert-success", "alert-danger", "alert-warning");
+    };
+
+    const readContactPayload = () => ({
+      name: contactForm.querySelector("#fullName")?.value.trim() || "",
+      email: contactForm.querySelector("#email")?.value.trim() || "",
+      phone: contactForm.querySelector("#phone")?.value.trim() || "",
+      service: contactForm.querySelector("#service")?.value.trim() || "",
+      company: contactForm.querySelector("#company")?.value.trim() || "",
+      message: contactForm.querySelector("#message")?.value.trim() || "",
+    });
+
+    contactForm.addEventListener("submit", async (e) => {
       e.preventDefault();
+      clearFormStatus();
       let valid = true;
 
       contactForm.querySelectorAll("[required]").forEach((field) => {
@@ -180,16 +207,69 @@
         if (!fieldValid) valid = false;
       });
 
-      if (!valid) return;
+      const honeypot = contactForm.querySelector("#website");
+      if (honeypot?.value.trim()) return;
 
+      if (!valid) {
+        setFormStatus("error", "Please check the highlighted fields and try again.");
+        return;
+      }
+
+      if (!inbox) {
+        setFormStatus(
+          "warn",
+          "Online sending is not configured. Please email kalyanteja.web@gmail.com or call +91 83281 06802."
+        );
+        return;
+      }
+
+      const payload = readContactPayload();
       const btn = contactForm.querySelector('[type="submit"]');
       const original = btn.innerHTML;
       btn.disabled = true;
       btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
 
-      setTimeout(() => {
+      try {
+        const res = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(inbox)}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Accept: "application/json",
+          },
+          body: JSON.stringify({
+            name: payload.name,
+            email: payload.email,
+            phone: payload.phone,
+            service: payload.service,
+            company: payload.company,
+            message: payload.message,
+            _subject: `Website enquiry: ${payload.service} — ${payload.name}`,
+            _template: "table",
+            _captcha: "false",
+          }),
+        });
+
+        let data = null;
+        try {
+          data = await res.json();
+        } catch {
+          data = null;
+        }
+
+        const ok = res.ok && data && (data.success === true || data.success === "true");
+        if (!ok) {
+          const msg = data?.message || "The server could not deliver your message.";
+          if (/activation|activate form/i.test(msg)) {
+            throw new Error(
+              "Form delivery is pending activation — check kalyanteja.web@gmail.com for FormSubmit’s activation link, then try again."
+            );
+          }
+          throw new Error(msg);
+        }
+
         btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
         btn.classList.add("btn-success");
+        setFormStatus("success", "Thank you — your enquiry was sent. We typically reply within one business day.");
         contactForm.reset();
         contactForm.querySelectorAll(".is-valid").forEach((f) => f.classList.remove("is-valid"));
 
@@ -198,7 +278,14 @@
           btn.innerHTML = original;
           btn.classList.remove("btn-success");
         }, 2800);
-      }, 1200);
+      } catch (err) {
+        btn.disabled = false;
+        btn.innerHTML = original;
+        setFormStatus(
+          "error",
+          `${err.message || "Something went wrong."} You can also email kalyanteja.web@gmail.com or WhatsApp +91 83281 06802.`
+        );
+      }
     });
 
     contactForm.querySelectorAll("input, textarea, select").forEach((field) => {
@@ -226,19 +313,32 @@
   }
 
   /* ---------- Testimonials Swiper ---------- */
-  if (typeof Swiper !== "undefined" && document.querySelector(".testimonials-swiper")) {
-    new Swiper(".testimonials-swiper", {
+  function initTestimonialsSwiper() {
+    if (typeof Swiper === "undefined") return;
+    const root = document.querySelector(".testimonials-swiper");
+    if (!root) return;
+    const count = root.querySelectorAll(".swiper-wrapper > .swiper-slide").length;
+    if (!count) return;
+    if (window.testimonialsSwiper && typeof window.testimonialsSwiper.destroy === "function") {
+      window.testimonialsSwiper.destroy(true, true);
+    }
+    const pagination = root.querySelector(".swiper-pagination");
+    if (pagination) pagination.replaceChildren();
+    window.testimonialsSwiper = new Swiper(root, {
       slidesPerView: 1,
       spaceBetween: 24,
-      loop: true,
+      loop: count >= 4,
       autoplay: { delay: 4500, disableOnInteraction: false },
-      pagination: { el: ".swiper-pagination", clickable: true },
+      pagination: { el: pagination, clickable: true },
       breakpoints: {
         768: { slidesPerView: 2 },
         1100: { slidesPerView: 3 },
       },
     });
   }
+
+  window.initTestimonialsSwiper = initTestimonialsSwiper;
+  initTestimonialsSwiper();
 
   /* ---------- Technologies — smooth continuous glide (no remount) ---------- */
   const techViewport = document.getElementById("techViewport");

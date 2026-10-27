@@ -5,7 +5,9 @@
     "sync-brands": "node scripts/sync-brands.js",
     "watch-brands": "node scripts/watch-brands.js",
     "validate-seo": "node scripts/validate-seo.js",
+    "apply-schema": "node scripts/apply-standard-schema.js",
     "patch-seo": "node scripts/patch-clean-urls.js && node scripts/patch-social-links.js && node scripts/patch-seo-meta.js && node scripts/patch-schema-sameas.js",
-    "dev": "npx --yes serve . -l 3000"
+    "dev": "npx --yes serve . -l 3000",
+    "test:reviews": "node scripts/test-google-reviews.js"
   }
 }

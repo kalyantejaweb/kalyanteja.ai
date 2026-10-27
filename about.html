@@ -48,18 +48,43 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "AboutPage",
-    "name": "About KALYANTEJA",
-    "description": "Learn about KALYANTEJA — an enterprise software development company delivering inspired web solutions worldwide.",
-    "url": "https://kalyanteja.vercel.app/about",
-    "mainEntity": {
-      "@type": "Organization",
-      "name": "KALYANTEJA",
-      "slogan": "Inspired Web Solutions",
-      "foundingDate": "2014",
-      "url": "https://kalyanteja.vercel.app",
-      "logo": "https://kalyanteja.vercel.app/assets/images/logo-f.png"
-    }
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": "https://kalyanteja.vercel.app/about#webpage",
+        "url": "https://kalyanteja.vercel.app/about",
+        "name": "About KalyanTeja Inspired Digital Solutions",
+        "description": "Learn about KalyanTeja Inspired Digital Solutions — 14+ years, 90+ projects delivered, and 12+ industries served from Hyderabad.",
+        "isPartOf": {
+          "@id": "https://kalyanteja.vercel.app/#website"
+        },
+        "about": {
+          "@id": "https://kalyanteja.vercel.app/#organization"
+        },
+        "publisher": {
+          "@id": "https://kalyanteja.vercel.app/#organization"
+        },
+        "inLanguage": "en-IN",
+        "mainEntity": {
+          "@id": "https://kalyanteja.vercel.app/#organization"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://kalyanteja.vercel.app/#website",
+        "url": "https://kalyanteja.vercel.app/",
+        "name": "KalyanTeja Inspired Digital Solutions"
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://kalyanteja.vercel.app/#organization",
+        "name": "KalyanTeja Inspired Digital Solutions",
+        "url": "https://kalyanteja.vercel.app/",
+        "logo": "https://kalyanteja.vercel.app/assets/images/logo-f.png",
+        "telephone": "+91-83281-06802",
+        "email": "kalyanteja.web@gmail.com"
+      }
+    ]
   }
   </script>
 </head>
@@ -69,8 +94,8 @@
   <header class="site-header">
     <nav class="navbar navbar-expand-lg">
       <div class="container-xl header-bar">
-        <a class="navbar-brand" href="index.html" aria-label="KALYANTEJA Home">
-          <img src="assets/images/logo-f.png" alt="KALYANTEJA — Inspired Digital Solutions" width="260" height="72">
+        <a class="navbar-brand" href="index.html" aria-label="KalyanTeja Inspired Digital Solutions Home">
+          <img src="assets/images/logo-f.png" alt="KalyanTeja Inspired Digital Solutions" width="260" height="72">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -113,7 +138,7 @@
     <!-- ========== PAGE HERO ========== -->
     <section class="page-hero" aria-labelledby="pageTitle">
       <div class="container-xl">
-        <span class="eyebrow" style="color:var(--accent);">KALYANTEJA Inspired Digital Solutions</span>
+        <span class="eyebrow" style="color:var(--accent);">KalyanTeja Inspired Digital Solutions</span>
         <h1 id="pageTitle">About KalyanTeja Inspired Digital Solutions</h1>
         <p>We are a global software engineering company built on craftsmanship, transparency, and long-term partnerships — turning complex business challenges into reliable digital platforms.</p>
         <nav class="breadcrumb-nav" aria-label="Breadcrumb">
@@ -129,7 +154,7 @@
       <div class="container-xl">
         <div class="about-split">
           <div class="about-image-wrap img-zoom" data-aos="fade-right">
-            <img src="assets/images/mine.jpg" alt="KALYANTEJA leadership team in a strategy workshop" width="600" height="480" loading="lazy">
+            <img src="assets/images/mine.jpg" alt="KalyanTeja Inspired Digital Solutions leadership team in a strategy workshop" width="600" height="480" loading="lazy">
             <div class="about-image-badge">
               <div class="years"><span data-count="14" data-suffix="+">14+</span></div>
               <div>
@@ -144,14 +169,14 @@
               <span class="eyebrow">Who We Are</span>
               <h2 class="section-title wide" id="storyTitle">Engineers, designers, and strategists united by one purpose</h2>
               <p class="section-lead">
-                Founded in Hyderabad and serving clients across continents, KALYANTEJA began as a focused web studio and evolved into a full-spectrum technology partner. Today we design, build, and sustain software for government agencies, healthcare networks, financial institutions, and fast-growing enterprises.
+                Founded in Hyderabad, KalyanTeja Inspired Digital Solutions began as a focused web studio and grew into a full-service digital partner. Today we design, build, and support websites, apps, and marketing for businesses across 12+ industries — with 90+ projects delivered and 14+ years of experience.
               </p>
             </div>
             <p>
               Our teams combine deep technical expertise with domain understanding — so every release aligns with compliance requirements, user expectations, and measurable business outcomes. We do not chase trends for their own sake; we select architectures and tools that remain maintainable years after launch.
             </p>
             <p class="mt-3">
-              Whether modernizing a legacy ERP, launching a patient-facing mobile app, or standing up cloud-native microservices, clients choose KALYANTEJA for predictable delivery, senior talent, and a culture that treats every engagement as a partnership, not a transaction.
+              Whether modernizing a legacy ERP, launching a patient-facing mobile app, or standing up cloud-native microservices, clients choose KalyanTeja Inspired Digital Solutions for predictable delivery, senior talent, and a culture that treats every engagement as a partnership, not a transaction.
             </p>
             <a href="services.html" class="btn btn-primary mt-4">Explore Our Capabilities <i class="fas fa-arrow-right"></i></a>
           </div>
@@ -229,7 +254,7 @@
               <span class="eyebrow">Leadership & Culture</span>
               <h2 class="section-title wide" id="cultureTitle">Leaders who stay close to the craft</h2>
               <p class="section-lead">
-                KALYANTEJA is led by senior technologists and delivery executives who have shipped products at scale — and who still review architecture, unblock teams, and sit in client workshops when it matters most.
+                KalyanTeja Inspired Digital Solutions is led by senior technologists and delivery executives who have shipped products at scale — and who still review architecture, unblock teams, and sit in client workshops when it matters most.
               </p>
             </div>
             <p>
@@ -260,12 +285,12 @@
           </div>
 
           <div class="about-image-wrap img-zoom" data-aos="fade-left">
-            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80" alt="KALYANTEJA engineering culture — collaborative team environment" width="600" height="480" loading="lazy">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=900&q=80" alt="KalyanTeja Inspired Digital Solutions engineering culture — collaborative team environment" width="600" height="480" loading="lazy">
             <div class="about-image-badge">
-              <div class="years"><span data-count="100" data-suffix="+">100+</span></div>
+              <div class="years"><span data-count="12" data-suffix="+">12+</span></div>
               <div>
-                <strong style="color:var(--dark);font-family:var(--font-display);">Skilled Professionals</strong>
-                <p class="mb-0" style="font-size:0.8rem;">Developers, designers, QA, and cloud specialists</p>
+                <strong style="color:var(--dark);font-family:var(--font-display);">Industries Served</strong>
+                <p class="mb-0" style="font-size:0.8rem;">From retail and healthcare to education and SaaS</p>
               </div>
             </div>
           </div>
@@ -284,19 +309,19 @@
 
         <div class="stats-bar" data-aos="fade-up">
           <div class="stat-item">
-            <div class="stat-number"><span data-count="10" data-suffix="+">0</span></div>
+            <div class="stat-number"><span data-count="14" data-suffix="+">14+</span></div>
             <div class="stat-label">Years Experience</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number"><span data-count="500" data-suffix="+">0</span></div>
+            <div class="stat-number"><span data-count="90" data-suffix="+">90+</span></div>
             <div class="stat-label">Projects Delivered</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number"><span data-count="100" data-suffix="+">0</span></div>
-            <div class="stat-label">Developers & Specialists</div>
+            <div class="stat-number"><span data-count="12" data-suffix="+">12+</span></div>
+            <div class="stat-label">Industries Served</div>
           </div>
           <div class="stat-item">
-            <div class="stat-number"><span data-count="98" data-suffix="%">0</span></div>
+            <div class="stat-number"><span data-count="99" data-suffix="%">99%</span></div>
             <div class="stat-label">Client Satisfaction</div>
           </div>
         </div>
@@ -309,19 +334,19 @@
         <div class="section-header centered" data-aos="fade-up">
           <span class="eyebrow">Our Journey</span>
           <h2 class="section-title" id="milestonesTitle">Milestones that shaped who we are</h2>
-          <p class="section-lead">From a focused studio to a global delivery partner — key moments in the KALYANTEJA story.</p>
+          <p class="section-lead">From a focused studio to a trusted Hyderabad partner — key moments in the KalyanTeja Inspired Digital Solutions story.</p>
         </div>
 
         <div class="process-timeline">
           <div class="process-step" data-aos="fade-up">
             <div class="process-num">2014</div>
             <h3>Company Founded</h3>
-            <p>KALYANTEJA launched in Hyderabad as a boutique web development studio serving local businesses and startups.</p>
+            <p>KalyanTeja Inspired Digital Solutions launched in Hyderabad as a boutique web development studio serving local businesses and startups.</p>
           </div>
           <div class="process-step" data-aos="fade-up" data-aos-delay="50">
             <div class="process-num">2017</div>
-            <h3>Enterprise Expansion</h3>
-            <p>Expanded into enterprise software and government digital services, establishing dedicated .NET and Java practices.</p>
+            <h3>Service Expansion</h3>
+            <p>Expanded into mobile apps, SEO, and digital marketing alongside custom web development for growing businesses.</p>
           </div>
           <div class="process-step" data-aos="fade-up" data-aos-delay="100">
             <div class="process-num">2019</div>
@@ -331,17 +356,17 @@
           <div class="process-step" data-aos="fade-up" data-aos-delay="150">
             <div class="process-num">2021</div>
             <h3>AI & Analytics Division</h3>
-            <p>Surpassed 300 delivered projects and formed an AI and data analytics team for predictive and intelligent systems.</p>
+            <p>Added automation-friendly workflows and data-driven marketing support for clients scaling online.</p>
           </div>
           <div class="process-step" data-aos="fade-up">
             <div class="process-num">2024</div>
-            <h3>500+ Projects Milestone</h3>
-            <p>Crossed 500 successful deployments while strengthening global delivery teams and security certifications.</p>
+            <h3>90+ Projects Milestone</h3>
+            <p>Crossed 90+ successful client deliveries while expanding capabilities across 12+ industry verticals.</p>
           </div>
           <div class="process-step" data-aos="fade-up" data-aos-delay="50">
             <div class="process-num">2026</div>
             <h3>Full-Spectrum Partner</h3>
-            <p>Recognized as an end-to-end digital transformation partner across software, cloud, AI, and managed support.</p>
+            <p>Continuing as an end-to-end partner for websites, apps, SEO, social media, and ongoing support.</p>
           </div>
         </div>
       </div>
@@ -370,7 +395,7 @@
       <div class="footer-top">
         <div class="footer-brand">
           <a class="navbar-brand" href="index.html">
-            <img src="assets/images/logo-f.png" alt="KALYANTEJA" width="220" height="60">
+            <img src="assets/images/logo-f.png" alt="KalyanTeja Inspired Digital Solutions" width="220" height="60">
           </a>
           <p>Inspired Web Solutions — delivering scalable software for enterprises, government, and ambitious startups worldwide.</p>
           <form class="newsletter-form" id="newsletterForm">
@@ -421,9 +446,9 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; <span class="current-year">2026</span> KALYANTEJA Inspired Digital Solutions. All rights reserved.</p>
+        <p>&copy; <span class="current-year">2026</span> KalyanTeja Inspired Digital Solutions. All rights reserved.</p>
         <div class="footer-social">
-          <a href="https://www.linkedin.com/in/kalyanteja" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer me"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://www.linkedin.com/in/kalyanbabuykb/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer me"><i class="fab fa-linkedin-in"></i></a>
           <a href="#" aria-label="Twitter" target="_blank" rel="noopener noreferrer me"><i class="fab fa-x-twitter"></i></a>
           <a href="#" aria-label="Facebook" target="_blank" rel="noopener noreferrer me"><i class="fab fa-facebook-f"></i></a>
           <a href="#" aria-label="Instagram" target="_blank" rel="noopener noreferrer me"><i class="fab fa-instagram"></i></a>
